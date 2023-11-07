@@ -146,13 +146,13 @@ class Quiz1 implements GLEventListener, KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            y1 += 10;
+            y1 += 1;
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            y1 -= 10;
+            y1 -= 1;
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            x1 -= 10;
+            x1 -= 1;
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            x1 += 10;
+            x1 += 1;
         }
         glc.repaint();
     }
