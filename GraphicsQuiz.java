@@ -9,6 +9,7 @@ import java.awt.event.KeyListener;
 
 public class GraphicsQuiz extends JFrame {
     static GLCanvas glcanvas = null;
+
     public static void main(String[] args) {
         GraphicsQuiz app = new GraphicsQuiz();
         SwingUtilities.invokeLater(
@@ -18,7 +19,8 @@ public class GraphicsQuiz extends JFrame {
                 }
         );
     }
-    GraphicsQuiz(){
+
+    GraphicsQuiz() {
         //set the JFrame title
         super("Geometric Shapes");
 //kill the process when the JFrame is closed
@@ -36,6 +38,7 @@ public class GraphicsQuiz extends JFrame {
 //center the JFrame on the screen
         centerWindow(this);
     }
+
     public void centerWindow(Component frame) {
         Dimension screenSize
                 = Toolkit.getDefaultToolkit().getScreenSize();
@@ -52,9 +55,10 @@ public class GraphicsQuiz extends JFrame {
         );
     }
 }
+
 class Quiz1 implements GLEventListener, KeyListener {
     GLCanvas glc;
-    int x1,y1=0;
+    int x1, y1 = 0;
 
     public void setGLCanvas(GLCanvas glcanvas) {
         this.glc = glcanvas;
@@ -75,7 +79,7 @@ class Quiz1 implements GLEventListener, KeyListener {
         GL gl = glAutoDrawable.getGL();
         gl.glClear(GL.GL_COLOR_BUFFER_BIT);
         gl.glPointSize(6.0f);
-        gl.glColor3f(1,1,1);
+        gl.glColor3f(1, 1, 1);
         gl.glBegin(gl.GL_LINES);
         for (int i = -500; i <= 500; i += 20) {
             gl.glVertex2i(i, 500);
@@ -88,38 +92,38 @@ class Quiz1 implements GLEventListener, KeyListener {
             gl.glVertex2i(-500, i);
         }
         gl.glEnd();
-        gl.glColor3f(1,0,0);
+        gl.glColor3f(1, 0, 0);
         gl.glBegin(gl.GL_POLYGON);
-        for(int i=0;i<360;i++){
-            gl.glVertex2i((int) (100*Math.cos(i)+100+x1), (int) (100*Math.sin(i)+100+y1));
+        for (int i = 0; i < 360; i++) {
+            gl.glVertex2i((int) (100 * Math.cos(i) + 100 + x1), (int) (100 * Math.sin(i) + 100 + y1));
         }
         gl.glEnd();
-        gl.glColor3f(0,1,0);
+        gl.glColor3f(0, 1, 0);
         gl.glBegin(gl.GL_POLYGON);
-        for(int i=0;i<360;i++){
-            gl.glVertex2i((int) (100*Math.cos(i)-45+x1), (int) (100*Math.sin(i)+y1));
+        for (int i = 0; i < 360; i++) {
+            gl.glVertex2i((int) (100 * Math.cos(i) - 45 + x1), (int) (100 * Math.sin(i) + y1));
         }
         gl.glEnd();
-        gl.glColor3f(0,0,1);
+        gl.glColor3f(0, 0, 1);
         gl.glBegin(gl.GL_POLYGON);
-        for(int i=0;i<360;i++){
-            gl.glVertex2i((int) (100*Math.cos(i)-50+x1), (int) (100*Math.sin(i)+150+y1));
+        for (int i = 0; i < 360; i++) {
+            gl.glVertex2i((int) (100 * Math.cos(i) - 50 + x1), (int) (100 * Math.sin(i) + 150 + y1));
         }
         gl.glEnd();
-        gl.glColor3f(1,1,0);
+        gl.glColor3f(1, 1, 0);
         gl.glBegin(gl.GL_POLYGON);
-        gl.glVertex2i(197+x1,125+y1);
-        gl.glVertex2i(250+x1,-250+y1);
-        gl.glVertex2i(-71+x1,-97+y1);
+        gl.glVertex2i(197 + x1, 125 + y1);
+        gl.glVertex2i(250 + x1, -250 + y1);
+        gl.glVertex2i(-71 + x1, -97 + y1);
         gl.glEnd();
-        if(x1-145>500){
+        if (x1 - 145 > 500) {
             x1 = -750;
-        }else if(x1+250<-500){
+        } else if (x1 + 250 < -500) {
             x1 = 645;
         }
-        if(y1+250>500){
+        if (y1 + 250 > 500) {
             y1 = 250;
-        }else if(y1-250<-500){
+        } else if (y1 - 250 < -500) {
             y1 = -250;
         }
     }
