@@ -95,19 +95,19 @@ class Quiz1 implements GLEventListener, KeyListener {
         gl.glColor3f(1, 0, 0);
         gl.glBegin(gl.GL_POLYGON);
         for (int i = 0; i < 360; i++) {
-            gl.glVertex2i((int) (100 * Math.cos(i) + 100 + x1), (int) (100 * Math.sin(i) + 100 + y1));
+            gl.glVertex2i((int) (100 * Math.cos(Math.toRadians(i)) + 100 + x1), (int) (100 * Math.sin(Math.toRadians(i)) + 100 + y1));
         }
         gl.glEnd();
         gl.glColor3f(0, 1, 0);
         gl.glBegin(gl.GL_POLYGON);
         for (int i = 0; i < 360; i++) {
-            gl.glVertex2i((int) (100 * Math.cos(i) - 45 + x1), (int) (100 * Math.sin(i) + y1));
+            gl.glVertex2i((int) (100 * Math.cos(Math.toRadians(i)) - 45 + x1), (int) (100 * Math.sin(Math.toRadians(i)) + y1));
         }
         gl.glEnd();
         gl.glColor3f(0, 0, 1);
         gl.glBegin(gl.GL_POLYGON);
         for (int i = 0; i < 360; i++) {
-            gl.glVertex2i((int) (100 * Math.cos(i) - 50 + x1), (int) (100 * Math.sin(i) + 150 + y1));
+            gl.glVertex2i((int) (100 * Math.cos(Math.toRadians(i)) - 50 + x1), (int) (100 * Math.sin(Math.toRadians(i)) + 150 + y1));
         }
         gl.glEnd();
         gl.glColor3f(1, 1, 0);
@@ -116,16 +116,6 @@ class Quiz1 implements GLEventListener, KeyListener {
         gl.glVertex2i(250 + x1, -250 + y1);
         gl.glVertex2i(-71 + x1, -97 + y1);
         gl.glEnd();
-        if (x1 - 145 > 500) {
-            x1 = -750;
-        } else if (x1 + 250 < -500) {
-            x1 = 645;
-        }
-        if (y1 + 250 > 500) {
-            y1 = 250;
-        } else if (y1 - 250 < -500) {
-            y1 = -250;
-        }
     }
 
     @Override
@@ -153,6 +143,16 @@ class Quiz1 implements GLEventListener, KeyListener {
             x1 -= 1;
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             x1 += 1;
+        }
+        if (x1 - 145 > 500) {
+            x1 = -750;
+        } else if (x1 + 250 < -500) {
+            x1 = 645;
+        }
+        if (y1 + 250 > 500) {
+            y1 = 250;
+        } else if (y1 - 250 < -500) {
+            y1 = -250;
         }
         glc.repaint();
     }
