@@ -7,11 +7,11 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class GraphicsQuiz extends JFrame {
+public class GraphicsQuiz1 extends JFrame {
     static GLCanvas glcanvas = null;
 
     public static void main(String[] args) {
-        GraphicsQuiz app = new GraphicsQuiz();
+        GraphicsQuiz1 app = new GraphicsQuiz1();
         SwingUtilities.invokeLater(
                 () -> {
                     app.setVisible(true);
@@ -20,7 +20,7 @@ public class GraphicsQuiz extends JFrame {
         );
     }
 
-    GraphicsQuiz() {
+    GraphicsQuiz1() {
         //set the JFrame title
         super("Geometric Shapes");
 //kill the process when the JFrame is closed
