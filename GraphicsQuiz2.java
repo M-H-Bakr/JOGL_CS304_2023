@@ -126,7 +126,7 @@ class Quiz2 implements GLEventListener {
         }
         gl.glEnd();
         gl.glPopMatrix();
-        //if (collision) : angle = new Random().nextInt(0,90);
+        //if (collision) : given angle a random value between 0 and 90 (inclusive).
         if (x1 + 100 >= 500) {
             angle = new Random().nextInt(0, 91);
             xDirection = -10;
