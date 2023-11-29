@@ -143,8 +143,8 @@ class Quiz2 implements GLEventListener {
             angle = new Random().nextInt(0, 91);
             yDirection = 10;
         }
-        x1 += (int) (xDirection * Math.abs(Math.cos(Math.toRadians(angle))));
-        y1 += (int) (yDirection * Math.abs(Math.sin(Math.toRadians(angle))));
+        x1 += (int) (xDirection * Math.cos(Math.toRadians(angle)));
+        y1 += (int) (yDirection * Math.sin(Math.toRadians(angle)));
     }
 
     @Override
