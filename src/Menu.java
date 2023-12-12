@@ -296,7 +296,7 @@ class GLMenu implements GLEventListener, MouseListener {
                             If a collision happened the maze becomes red (unsafe) until the player moves
                             (Or any player moves in Multi player not in VS AI tho).
                             
-                            The player ending the last round first is considered the ultimate winner.
+                            The player finishing the last round first is considered the ultimate winner.
                                                         
                             A wall randomly appears every 2 seconds as a trap
                             (Not necessarily at the first step when playing VS AI)
